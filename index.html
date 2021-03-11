@@ -4,6 +4,29 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
-<h1>Online Library</h1>
+<header id="header-bar" class="header-bar">
+<div id="Logo" :style="styleObject">{{ message }}</div>
+<div id="Login">
+    <button>{{ message }}</button>
+</div>
+</header>
+<script>
+    var vmlogo = new Vue ({
+        el:'#Logo',
+        data:{
+            message: 'Online Library',
+            styleObject:{
+                fontSize: 40,
+                fontFamily: 'Helvetica'
+            }
+        }
+    })
+    var vmlogin = new Vue({
+        el:'#Login',
+        data:{
+            message: 'Login/Register'
+        }
+    })
+</script>
 </body>
 </html>
