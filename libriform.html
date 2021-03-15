@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script></style>
+</head>
+<body>
+<div id="libriform">
+<form>
+    ID:<br>
+    <input type="number" v-model="libri.libriid"/><br>
+    Titulli:<br>
+    <input type="text" v-model="libri.titulli"/><br>
+    Autori:<br>
+    <input type="text" v-model="libri.autori"/><br>
+    Viti i Botimit:<br>
+    <input type="number" v-model="libri.vitibotimit"/><br>
+</form>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#libriform',
+        data:{
+            libri:{
+                libriid:'',
+                titulli:'',
+                autori:'',
+                vitibotimit:''
+            }
+        }
+    })
+</script>
+</body>
+</html>
