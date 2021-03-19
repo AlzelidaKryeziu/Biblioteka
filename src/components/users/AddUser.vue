@@ -3,7 +3,7 @@
         <b-col cols="12">
             <h2>
                 Add User
-                <b-link href="#/users-list">(Users in the list)</b-link>
+                <b-link href="#/user-list">(Users in the list)</b-link>
             </h2>
             <b-jumbotron>
                 <b-form @submit="onSubmit">
@@ -38,9 +38,9 @@
 
 <script>
     import firebase from '../../Firebase'
-    import router from '../../router/index'
 
     export default{
+        name: 'AddUser',
         data(){
             return{
                 ref:firebase.firestore().collection('users'),
@@ -55,7 +55,7 @@
                     this.user.description=''
                     this.user.email=''
                     this.$router.push({
-                        name:'UserList'
+                        name:'UsersList'
                     })
                 })
             }
