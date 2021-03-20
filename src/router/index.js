@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import AddUser from '../components/users/AddUser.vue'
 import UsersList from '../components/users/UsersList.vue'
+import ShowUsers from '../components/users/ShowUsers.vue'
+import EditUser from '../components/users/EditUser.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +36,16 @@ const routes = [
     path: '/add-user',
     name: 'AddUser',
     component:AddUser
+  },
+  {
+    path: '/show-user:id',
+    name: 'ShowUsers',
+    component:ShowUsers
+  },
+  {
+    path: '/edit-user:id',
+    name: 'EditUser',
+    component:EditUser
   }
 ]
 
