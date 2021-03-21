@@ -5,6 +5,7 @@ import AddUser from '../components/users/AddUser.vue'
 import UsersList from '../components/users/UsersList.vue'
 import ShowUsers from '../components/users/ShowUsers.vue'
 import EditUser from '../components/users/EditUser.vue'
+import Login from '../components/authentification/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -46,6 +47,11 @@ const routes = [
     path: '/edit-user:id',
     name: 'EditUser',
     component:EditUser
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component:Login
   }
 ]
 
