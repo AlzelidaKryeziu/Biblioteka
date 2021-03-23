@@ -4,7 +4,13 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/book">Book</router-link> |
-      <router-link to="/user-list">User List</router-link>
+      <router-link to="/user-list">User List</router-link> |
+      <router-link to="/login">Login</router-link> |
+      <router-link to="/register">Register</router-link>
+      <template v-if="user.loggedIn">
+        <a>{{user.data.dispalyName}}</a>
+        <a @click.prevent="signOut">LogOut!</a>
+      </template>
     </div>
     <router-view/>
     <Footer></Footer>
@@ -12,10 +18,30 @@
 </template>
 <script>
 import Footer from './views/Footer.vue'
+import {mapGetters} from 'vuex'
+import firebase from 'firebase'
+
 export default {
   name: 'App',
   components: {
     Footer
+  },
+  computed:{
+    ...mapGetters({
+      user:"user"
+    })
+  },
+  methods:{
+    signOut(){
+      firebase
+      .auth()
+      .signOut()
+      .then(()=>{
+        this.$router.replace({
+          name:"home"
+        });
+      });
+    }
   }
 }
 </script>

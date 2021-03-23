@@ -15,11 +15,12 @@
 </template>
 
 <script>
+/*eslint-disable*/
 import firebase from 'firebase'
 export default {
     data(){
         return{
-            from:{
+            form:{
                 email:"",
                 password:""
             }, error:null
