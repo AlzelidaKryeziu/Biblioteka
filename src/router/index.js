@@ -6,9 +6,11 @@ import UsersList from '../components/users/UsersList.vue'
 import ShowUsers from '../components/users/ShowUsers.vue'
 import EditUser from '../components/users/EditUser.vue'
 import Login from '../components/authentification/Login.vue'
-import Register from '../components/authentification/Register'
+import Register from '../components/authentification/Register.vue'
 import BookList from '../components/books/BookList.vue'
 import AddBooks from '../components/books/AddBooks.vue'
+import ShowBooks from '../components/books/ShowBooks.vue'
+import EditBooks from '../components/books/EditBooks.vue'
 
 Vue.use(VueRouter)
 
@@ -70,6 +72,16 @@ const routes = [
     path: '/add-books',
     name: 'AddBooks',
     component:AddBooks
+  },
+  {
+    path: '/show-books',
+    name: 'ShowBooks',
+    component:ShowBooks
+  },
+  {
+    path: '/edit-books',
+    name: 'EditBooks',
+    component:EditBooks
   }
 ]
 
