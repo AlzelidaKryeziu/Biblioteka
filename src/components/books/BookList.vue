@@ -3,9 +3,9 @@
         <b-col cols="12">
             <h2>
                 Book List
-                <b-link href="#/book-list">Add Book</b-link>
+                <b-link href="#/add-books">Add Book</b-link>
             </h2>
-            <b-table striped hover :items="users" :fields="fields">
+            <b-table striped hover :items="books" :fields="fields">
                 <template v-slot:cell(actions)="data">
                     <b-button @click.stop="details(data.item)" variant="primary">Details</b-button>
                 </template>
@@ -21,7 +21,7 @@ export default {
     data(){
         return{
             fields:[
-                { key: 'ame', label:'Name', sortable:true, 'class':'text-left'},
+                { key: 'title', label:'Title', sortable:true, 'class':'text-left'},
                 { key: 'author', label:'Author', sortable:true, 'class':'text-left'},
                 { key: 'actions', label:'Actions', 'class':'text-center'}
             ],
@@ -35,7 +35,8 @@ export default {
             querySnapshot.forEach((doc) =>{
                 this.books.push({
                     key:doc.id,
-                    name:doc.data().name
+                    title:doc.data().title,
+                    author:doc.data().author
                 })
             })
         })

@@ -8,6 +8,7 @@ import EditUser from '../components/users/EditUser.vue'
 import Login from '../components/authentification/Login.vue'
 import Register from '../components/authentification/Register'
 import BookList from '../components/books/BookList.vue'
+import AddBooks from '../components/books/AddBooks.vue'
 
 Vue.use(VueRouter)
 
@@ -59,6 +60,16 @@ const routes = [
     path: '/register',
     name: 'register',
     component:Register
+  },
+  {
+    path: '/book-list',
+    name: 'BookList',
+    component:BookList
+  },
+  {
+    path: '/add-books',
+    name: 'AddBooks',
+    component:AddBooks
   }
 ]
 
