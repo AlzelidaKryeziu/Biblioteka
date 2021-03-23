@@ -43,7 +43,7 @@
         }, methods: {
             editbook (id){
                 this.$router.push({
-                    name: 'EditBook',
+                    name: 'EditBooks',
                     params: {id: id}
                 })
             },

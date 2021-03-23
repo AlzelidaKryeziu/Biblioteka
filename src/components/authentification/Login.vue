@@ -30,7 +30,7 @@ export default {
             firebase.auth()
             .signInWithEmailAndPassword(this.form.email, this.form.password)
             .then(data=>{
-                this.$router.push({name:'home',})
+                this.$router.push({name:'Home'})
             })
             .catch(err=>{
                 this.error = err.message;

@@ -64,6 +64,7 @@
 </template>
 
 <script>
+/*eslint-disable*/
 import firebase from 'firebase'
 
 export default {
@@ -86,7 +87,9 @@ export default {
                 .updateProfile({
                     displayName: this.form.name
                 })
-                .then(()=>{});
+                .then(data=>{
+                this.$router.push({name:'Home'})
+                });
             })
             .catch(err =>{
                 this.error = err.message;

@@ -8,8 +8,12 @@
       <router-link to="/login">Login</router-link> |
       <router-link to="/register">Register</router-link>
       <template v-if="user.loggedIn">
-        <a>{{user.data.dispalyName}}</a>
-        <a @click.prevent="signOut">LogOut!</a>
+        <li class="nav-item">
+          <a class="nav-link">{{user.data.displayName}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" @click.prevent="signOut">LogOut!</a>
+        </li>
       </template>
     </div>
     <router-view/>

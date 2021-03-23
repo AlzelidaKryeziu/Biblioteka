@@ -50,7 +50,7 @@
             onSubmit(evt){
                 evt.preventDefault()
 
-                this.ref.add(this.books).then(() =>{
+                this.ref.add(this.book).then(() =>{
                     this.book.title=''
                     this.book.author=''
                     this.book.year=''
