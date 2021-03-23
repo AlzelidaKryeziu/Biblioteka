@@ -7,6 +7,7 @@ import ShowUsers from '../components/users/ShowUsers.vue'
 import EditUser from '../components/users/EditUser.vue'
 import Login from '../components/authentification/Login.vue'
 import Register from '../components/authentification/Register'
+import BookList from '../components/books/BookList.vue'
 
 Vue.use(VueRouter)
 
@@ -25,9 +26,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/book',
-    name: 'Book',
-    component: () => import('../views/Book.vue')
+    path: '/book-list',
+    name: 'BookList',
+    component:BookList
   },
   {
     path: '/user-list',

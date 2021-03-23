@@ -8,9 +8,9 @@
             <b-jumbotron>
                 <template slot="header">{{user.name}}</template>
                 <template slot="lead">
-                    name: {{user.name}}<br>
+                    Name: {{user.name}}<br>
                     Description: {{user.description}}<br>
-                    email: {{user.email}}<br>
+                    Email: {{user.email}}<br>
                 </template>
                 <hr class="my-4">
                 <b-btn class="edit-btn" variant="success" @click.stop="edituser(key)">Edit</b-btn>
