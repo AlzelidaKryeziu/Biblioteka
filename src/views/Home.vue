@@ -1,23 +1,18 @@
 <template>
   <div class="home">
-    <img alt="Library Logo" src="../assets/librarylogo.png">
-    <HelloWorld msg="Online Library"/>
+    <h4>Online Library</h4>
+    <a>This website serves as an online library where users can view the different available books</a><br>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    
   }
 }
 </script>
-<style scoped>
-img{
-  width: 10%;
-}
-</style>

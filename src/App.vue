@@ -1,53 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/user-list">User List</router-link> |
-      <router-link to="/book-list">Book List</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/register">Register</router-link>
-      <template v-if="user.loggedIn">
-        <li class="nav-item">
-          <a class="nav-link">{{user.data.displayName}}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" @click.prevent="signOut">LogOut!</a>
-        </li>
-      </template>
-    </div>
-    <router-view/>
-    <Footer></Footer>
+    <app-Header></app-Header>
+    <router-view></router-view>
+    <app-Footer></app-Footer>
   </div>
 </template>
-<script>
-import Footer from './views/Footer.vue'
-import {mapGetters} from 'vuex'
-import firebase from 'firebase'
 
-export default {
-  name: 'App',
-  components: {
-    Footer
-  },
-  computed:{
-    ...mapGetters({
-      user:"user"
-    })
-  },
-  methods:{
-    signOut(){
-      firebase
-      .auth()
-      .signOut()
-      .then(()=>{
-        this.$router.replace({
-          name:"home"
-        });
-      });
+<script>
+/* eslint-disable */
+    import Header from './views/Header.vue';
+    import Footer from './views/Footer.vue';
+    export default {
+        data(){
+            return{
+                text:'Hello World'
+            }
+        },filters:{
+            toUpperCase(value){
+                return value.toUpperCase();
+            }
+        },
+        components:{
+            appHeader:Header,
+            appFooter:Footer
+        }
     }
-  }
-}
 </script>
 <style>
 #app {

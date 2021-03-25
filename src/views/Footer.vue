@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="footer">
     <footer>
       <span class="footer">©OnlineLibrary</span> |
       <span class="footer">Emshir, Prishtine</span> |
@@ -15,3 +15,12 @@ export default {
   }
 }
 </script>
+<style>
+footer{
+  font-size: 18px;
+  padding: 25px;
+  background:lightslategrey;
+  color: white;
+  margin-top:15%;
+}
+</style>
