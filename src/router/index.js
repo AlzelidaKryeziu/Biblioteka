@@ -1,5 +1,3 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import AddUser from '../components/users/AddUser.vue'
 import UsersList from '../components/users/UsersList.vue'
@@ -12,9 +10,9 @@ import AddBooks from '../components/books/AddBooks.vue'
 import ShowBooks from '../components/books/ShowBooks.vue'
 import EditBooks from '../components/books/EditBooks.vue'
 
-Vue.use(VueRouter)
 
-const routes = [
+
+export const routes = [
   {
     path: '/',
     name: 'Home',
@@ -80,8 +78,4 @@ const routes = [
   }
 ]
 
-const router = new VueRouter({
-  routes
-})
 
-export default router
