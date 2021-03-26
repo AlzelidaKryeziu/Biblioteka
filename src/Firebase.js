@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import store from "./store";
 const settings = {timestampsInSnapshots:true};
 const config = {
     apiKey: "AIzaSyCyRnai_gzx-vLYwj_rRjbqGqgM_QzWaZQ",
@@ -11,7 +12,7 @@ const config = {
 };
 firebase.initializeApp(config);
 firebase.firestore().settings(settings);
-firebase.auth().onAuthStateChanged(user=>{
-    StorageEvent.dispatch("fetchUser", user);
-});
+firebase.auth().onAuthStateChanged(user => {
+    store.dispatch("fetchUser", user);
+  });
 export default firebase;

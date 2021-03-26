@@ -6,7 +6,7 @@
           <div class="card-header">Login</div>
           <div class="card-body">
             <div v-if="error" class="alert alert-danger">{{error}}</div>
-            <form action="#" @submit.prevent="submit">
+            <form action="#" @submit.prevent="pressed">
               <div class="form-group row">
                 <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
 
@@ -67,7 +67,7 @@ export default {
     };
   },
   methods: {
-    submit() {
+    pressed() {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
