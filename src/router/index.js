@@ -9,10 +9,14 @@ import BookList from '../components/books/BookList.vue'
 import AddBooks from '../components/books/AddBooks.vue'
 import ShowBooks from '../components/books/ShowBooks.vue'
 import EditBooks from '../components/books/EditBooks.vue'
+import VueRouter from 'vue-router'
+import firebase from '../Firebase'
+import router from './index'
 
 
 
-export const routes = [
+export default new VueRouter({
+  routes: [
   {
     path: '/',
     name: 'Home',
@@ -59,7 +63,10 @@ export const routes = [
   {
     path: '/book-list',
     name: 'BookList',
-    component:BookList
+    component:BookList,
+    meta:{
+      requiresAuth:true
+    }
   },
   {
     path: '/add-books',
@@ -77,5 +84,13 @@ export const routes = [
     component:EditBooks
   }
 ]
-
-
+})
+router.beforeEach(async(to, from, next) =>{
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  if (requiresAuth && !await firebase.getCurrentUser()){
+    next('login');
+  }
+  else {
+    next();
+  }
+})
