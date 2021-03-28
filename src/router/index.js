@@ -9,6 +9,7 @@ import BookList from '../components/books/BookList.vue'
 import AddBooks from '../components/books/AddBooks.vue'
 import ShowBooks from '../components/books/ShowBooks.vue'
 import EditBooks from '../components/books/EditBooks.vue'
+import Contacts from '../views/Contacts.vue'
 import VueRouter from 'vue-router'
 import firebase from '../Firebase'
 import router from './index'
@@ -82,6 +83,11 @@ export default new VueRouter({
     path: '/edit-books',
     name: 'EditBooks',
     component:EditBooks
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component:Contacts
   }
 ]
 })

@@ -20,6 +20,11 @@
         </router-link>
       </li>
       <li class="nav-item">
+        <router-link class="nav-link" to="/contact" >
+          <a>Contact us</a>
+        </router-link>
+      </li>
+      <li class="nav-item">
         <router-link class="nav-link" to="/book-list" >
           <a>Books</a>
         </router-link>

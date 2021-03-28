@@ -1,12 +1,11 @@
 <template>
     <div class="container features">
         <div class="row">
-            <h1>Contact</h1>
+            <h1>Contact us here.</h1>
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <iframe src="">
-            </div>
+                <iframe width="500" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=500&cp=42.647522026323195~21.152810841636075&lvl=17&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no"></iframe>            </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <form @submit.prevent="onSubmit">
                     <div class="form-group">
@@ -17,6 +16,7 @@
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" rows="4" placeholder="Enter your comments" v-model="contacts.description">
+                        </textarea>
                     </div>
                     <input type="submit" class="btn btn-secondary btn-block" value="Send">
                 </form>
@@ -40,8 +40,8 @@ export default {
         onSubmit(){
             axios.post('http://localhost:4000/contacts', this.contacts)
             .then(response => {
-                this.$router.push({
-                    name:'user'
+                router.push({
+                    name:'home'
                 })
             })
         }
