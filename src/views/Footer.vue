@@ -21,6 +21,5 @@ footer{
   padding: 25px;
   background:lightslategrey;
   color: white;
-  margin-top:15%;
 }
 </style>

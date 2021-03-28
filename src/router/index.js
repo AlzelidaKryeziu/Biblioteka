@@ -41,17 +41,26 @@ export default new VueRouter({
   {
     path: '/add-user',
     name: 'AddUser',
-    component:AddUser
+    component:AddUser,
+    meta:{
+      requiresAuth:true
+    }
   },
   {
     path: '/show-user:id',
     name: 'ShowUsers',
-    component:ShowUsers
+    component:ShowUsers,
+    meta:{
+      requiresAuth:true
+    }
   },
   {
     path: '/edit-user:id',
     name: 'EditUser',
-    component:EditUser
+    component:EditUser,
+    meta:{
+      requiresAuth:true
+    }
   },
   {
     path: '/login',
@@ -66,25 +75,31 @@ export default new VueRouter({
   {
     path: '/book-list',
     name: 'BookList',
-    component:BookList,
+    component:BookList
+  },
+  {
+    path: '/add-books',
+    name: 'AddBooks',
+    component:AddBooks,
     meta:{
       requiresAuth:true
     }
   },
   {
-    path: '/add-books',
-    name: 'AddBooks',
-    component:AddBooks
-  },
-  {
     path: '/show-books',
     name: 'ShowBooks',
-    component:ShowBooks
+    component:ShowBooks,
+    meta:{
+      requiresAuth:true
+    }
   },
   {
     path: '/edit-books',
     name: 'EditBooks',
-    component:EditBooks
+    component:EditBooks,
+    meta:{
+      requiresAuth:true
+    }
   },
   {
     path: '/contact',
@@ -94,12 +109,18 @@ export default new VueRouter({
   {
     path: '/contact-list',
     name: 'ContactList',
-    component:ContactList
+    component:ContactList,
+    meta:{
+      requiresAuth:true
+    }
   },
   {
     path: '/contact-details:id',
     name: 'ContactDetails',
-    component:ContactDetails
+    component:ContactDetails,
+    meta:{
+      requiresAuth:true
+    }
   }
 ]
 })

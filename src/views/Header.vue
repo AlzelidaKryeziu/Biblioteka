@@ -37,6 +37,9 @@
             <li class="nav-item">
               <a class="nav-link" @click.prevent="signOut">Sign out</a>
             </li>
+            <li class="nav-item">
+              <router-link to="contact-list">Contact List</router-link>
+            </li>
           </template>
           <template v-else>
             <li class="nav-item">
