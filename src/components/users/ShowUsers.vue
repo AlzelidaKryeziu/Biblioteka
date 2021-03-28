@@ -9,6 +9,7 @@
                 <template slot="header">{{user.name}}</template>
                 <template slot="lead">
                     Name: {{user.name}}<br>
+                    Last Name: {{user.lastn}}<br>
                     Description: {{user.description}}<br>
                     Email: {{user.email}}<br>
                 </template>

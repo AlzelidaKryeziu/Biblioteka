@@ -21,7 +21,8 @@ export default {
     data(){
         return{
             fields:[
-                { key: 'name', label:'name', sortable:true, 'class':'text-left'},
+                { key: 'name', label:'Name', sortable:true, 'class':'text-left'},
+                { key: 'lastn', label:'Last Name', sortable:true, 'class':'text-left'},
                 { key: 'actions', label:'Actions', 'class':'text-center'}
             ],
             users:[],
@@ -34,7 +35,8 @@ export default {
             querySnapshot.forEach((doc) =>{
                 this.users.push({
                     key:doc.id,
-                    name:doc.data().name
+                    name:doc.data().name,
+                    lastn:doc.data().lastn
                 })
             })
         })
