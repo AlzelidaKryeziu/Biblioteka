@@ -5,8 +5,8 @@
         Contact List
       </h2>
       <b-table striped hover :items="contacts" :fields="fields">
-        <template slot="actions" scope="row">
-          <b-button @click.stop="details(row.item)">Details</b-button>
+        <template v-slot:cell(actions)="data">
+            <b-button @click.stop="details(data.item)" variant="primary">Details</b-button>
         </template>
       </b-table>
     </b-col>
@@ -39,10 +39,10 @@ export default {
     })
   },
   methods: {
-    details (contacts) {
+    details (contact) {
       this.$router.push({
         name: 'ContactDetails',
-        params: { id: this.contacts._id }
+        params: { id: contact._id }
       })
     }
   }

@@ -11,6 +11,7 @@ import ShowBooks from '../components/books/ShowBooks.vue'
 import EditBooks from '../components/books/EditBooks.vue'
 import Contacts from '../views/Contacts.vue'
 import ContactList from '../views/ContactList.vue'
+import ContactDetails from '../views/ContactDetails.vue'
 import VueRouter from 'vue-router'
 import firebase from '../Firebase'
 import router from './index'
@@ -94,6 +95,11 @@ export default new VueRouter({
     path: '/contact-list',
     name: 'ContactList',
     component:ContactList
+  },
+  {
+    path: '/contact-details:id',
+    name: 'ContactDetails',
+    component:ContactDetails
   }
 ]
 })

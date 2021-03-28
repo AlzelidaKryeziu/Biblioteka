@@ -9,15 +9,15 @@
           {{contacts.name}}
         </template>
         <template slot="lead">
-          ISBN: {{contacts.name}}<br>
-          Author: {{contacts.email}}<br>
+          Name: {{contacts.name}}<br>
+          Email: {{contacts.email}}<br>
           Description: {{contacts.description}}<br>
         </template>
         <hr class="my-4">
         <p>
           Updated Date: {{contacts.updated_date}}
         </p>
-        <b-btn variant="danger" @click.stop="deletebook(contacts._id)">Delete</b-btn>
+        <b-btn variant="danger" @click.stop="deletecontact(contacts._id)">Delete</b-btn>
       </b-jumbotron>
     </b-col>
   </b-row>
@@ -25,6 +25,7 @@
 
 <script>
 import axios from 'axios'
+
 export default {
   name: 'ContactDetails',
   data () {
@@ -38,19 +39,19 @@ export default {
       this.contacts = response.data
     })
     .catch(e => {
-      this.errors.push(e)
+      this.error.push(e)
     })
   },
   methods: {
-    deletebook (contactsid) {
-      axios.delete('http://localhost:3000/book/' + contactsid)
-      .then((result) => {
+    deletecontact (contactsid) {
+      axios.delete('http://localhost:4000/contacts/' + contactsid)
+      .then(() => {
         this.$router.push({
           name: 'ContactList'
         })
       })
       .catch(e => {
-        this.errors.push(e)
+        this.error.push(e)
       })
     }
   }
