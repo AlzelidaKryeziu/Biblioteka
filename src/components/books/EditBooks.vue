@@ -12,14 +12,14 @@
                     :label-cols="4"
                     breakpoint="md"
                     label="Enter title">
-            <b-form-input id="title" v-model.trim="book.title"></b-form-input>
+            <b-form-input id="title" required v-model.trim="book.title"></b-form-input>
           </b-form-group>
           <b-form-group id="authorGroup"
                     horizontal
                     :label-cols="4"
                     breakpoint="md"
                     label="Enter Author">
-              <b-form-input id="author" v-model="book.author" placeholder="Enter Author Here" 
+              <b-form-input id="author" required v-model="book.author" placeholder="Enter Author Here" 
                     :rows="2" :max-rows="6">{{book.author}}</b-form-input>
           </b-form-group>
           <b-form-group id="yearGroup"

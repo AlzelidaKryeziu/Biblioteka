@@ -9,13 +9,13 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <form @submit.prevent="onSubmit">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name" v-model="contacts.name">
+                        <input type="text" class="form-control" placeholder="Name" required v-model="contacts.name">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" v-model="contacts.email">
+                        <input type="email" class="form-control" placeholder="Email" required v-model="contacts.email">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="4" placeholder="Enter your comments" v-model="contacts.description">
+                        <textarea class="form-control" rows="4" placeholder="Enter your comments" required v-model="contacts.description">
                         </textarea>
                     </div>
                     <input type="submit" class="btn btn-secondary btn-block" value="Send">
@@ -42,7 +42,7 @@ export default {
             axios.post('http://localhost:4000/contacts', this.contacts)
             .then(response => {
                 router.push({
-                    name:'home'
+                    name:'Home'
                 })
             })
         }

@@ -12,14 +12,14 @@
                     :label-cols="4"
                     breakpoint="md"
                     label="Enter Name">
-                    <b-form-input id="name" v-model.trim="user.name"></b-form-input>
+                    <b-form-input id="name" required v-model.trim="user.name"></b-form-input>
                     </b-form-group>
                     <b-form-group id="lastnGroup"
                     horizontal
                     :label-cols="4"
                     breakpoint="md"
                     label="Enter Last Name">
-                    <b-form-input id="lastn" v-model.trim="user.lastn"></b-form-input>
+                    <b-form-input id="lastn" required v-model.trim="user.lastn"></b-form-input>
                     </b-form-group>
                     <b-form-group id="descGroup"
                     horizontal
